@@ -17,7 +17,14 @@ let get_score p =
   | ')' -> 3
   | ']' -> 57
   | '}' -> 1197
-  | c -> raise (SyntaxError c)  
+  | c -> raise (SyntaxError c)
+
+let get_compl_score = function
+  | '(' -> 1
+  | '[' -> 2
+  | '{' -> 3
+  | '<' -> 4
+  | c -> raise (SyntaxError c)
 
 let read_file fn =
   let ic = open_in fn in
@@ -53,3 +60,17 @@ let run1 fn =
        with SyntaxError c -> score := !score + get_score c)
     f;
   !score
+
+let run2 fn =
+  let f = read_file fn in
+  let scores = ref [] in
+  List.iter
+    (fun l ->
+      try
+        let pl = read_line l in
+        List.iter print_char pl; print_newline ();
+        let sc = List.fold_left (fun acc p -> acc * 5 + get_compl_score p) 0 pl in
+        scores := sc :: !scores
+      with SyntaxError c -> ())
+    f;
+  List.nth (List.sort compare !scores) ((List.length !scores)/2)
