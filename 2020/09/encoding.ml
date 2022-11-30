@@ -54,9 +54,7 @@ let find_contiguous s invalid =
         )
       s;
     0
-with Cont q ->
-  let m1 = Queue.fold min max_int q in
-  let m2 = Queue.fold max 0 q in
-  m1 + m2
-
-
+  with Cont q ->
+    let m1 = Queue.fold min max_int q in
+    let m2 = Queue.fold max 0 q in
+    m1 + m2
