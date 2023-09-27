@@ -13,6 +13,7 @@ let is_valid_buffer a =
   let cs = Array.fold_left (fun acc c -> CharSet.add c acc) CharSet.empty a in
   not (CharSet.mem ' ' cs) && (CharSet.cardinal cs = buffer_size)
 
+(* desingned to use fun () -> input_char ic as next function when reading from a file *)
 let find_start next =
   let a = Array.make buffer_size ' ' in
   let push c =
