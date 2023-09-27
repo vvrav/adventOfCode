@@ -1,5 +1,5 @@
-# adventOfCode2021
+# Advent Of Code
 
-This is my humble production to solve some of the problems from [Advent Of Code 2020](https://adventofcode.com/2021).
+This is my humble production to solve some of the problems from [Advent Of Code](https://adventofcode.com/).
 
 The code is often quite dirty, and would need some big cleanup...
