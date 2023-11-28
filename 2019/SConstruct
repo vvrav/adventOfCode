@@ -1,0 +1,2 @@
+Object("utils/utils.cpp")
+Program("day01/day01.out", ["day01/fuel.cpp", "utils/utils.o"])

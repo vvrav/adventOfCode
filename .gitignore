@@ -8,6 +8,7 @@
 *.cmxs
 *.cmxa
 a.out
+.sconsign.dblite
 
 # ocamlbuild working directory
 _build/
