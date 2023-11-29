@@ -39,6 +39,7 @@ int runProg(std::vector<int> program, int noun, int verb) {
     }
     switch (program[current]) {
     case 1:
+      // should check if the indexes not outside program :O
       program[program[current + 3]] =
           program[program[current + 1]] + program[program[current + 2]];
       break;
@@ -49,6 +50,7 @@ int runProg(std::vector<int> program, int noun, int verb) {
     default:
       std::cerr << "ERROR: unrecognized instruction: " << program[current]
                 << std::endl;
+      exit(EXIT_FAILURE);
     }
     current += 4;
   }

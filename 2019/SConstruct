@@ -1,3 +1,4 @@
 Object("utils/utils.cpp")
 Program("day01/day01.out", ["day01/fuel.cpp", "utils/utils.o"])
 Program("day02/day02.out", ["day02/intcode.cpp", "utils/utils.o"])
+Program("day03/day03.out", ["day03/wires.cpp", "utils/utils.o"])

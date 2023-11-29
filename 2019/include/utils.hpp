@@ -7,7 +7,8 @@
 namespace utils {
 
 std::vector<std::string> getInput(int argc, char *argv[]);
+std::vector<std::string> splitString(const std::string &s, const char sep);
 
-};
+}; // namespace utils
 
 #endif
