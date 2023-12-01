@@ -16,7 +16,7 @@ std::map<std::pair<int, int>, int> readLine(const std::string &line) {
 
   for (const std::string instruction : instructions) {
     char dir = instruction[0];
-    int dist = std::stod(instruction.substr(1));
+    int dist = std::stoi(instruction.substr(1));
     switch (dir) {
     case 'U':
       for (int i = 0; i < dist; i++)
@@ -60,15 +60,17 @@ int main(int argc, char *argv[]) {
 
   std::cout << "Found " << inter.size() << " intersection(s)" << std::endl;
 
-  if (inter.size() > 0) {
+  if (inter.empty()) {
+    std::cout << "Found no intersection!" << std::endl;
+  } else {
     int minDist = manhattanToOrig(inter[0].first);
     int minSteps = map1[inter[0].first] + map2[inter[0].first];
     for (const auto point : inter) {
       std::cout << "(" << point.first.first << "," << point.first.second
                 << "), ";
-      int d = manhattanToOrig(point.first);
-      if (d < minDist)
-        minDist = d;
+      int dist = manhattanToOrig(point.first);
+      if (dist < minDist)
+        minDist = dist;
       int steps = map1[point.first] + map2[point.first];
       if (steps < minSteps)
         minSteps = steps;
@@ -78,9 +80,6 @@ int main(int argc, char *argv[]) {
               << minDist << std::endl
               << "Minimum steps to reach intersection: " << minSteps
               << std::endl;
-
-  } else {
-    std::cout << "Found no intersection!" << std::endl;
   }
 
   return EXIT_SUCCESS;

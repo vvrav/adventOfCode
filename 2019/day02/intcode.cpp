@@ -25,7 +25,7 @@ void printProg(const std::vector<int> &prog) {
 
 int runProg(std::vector<int> program, int noun, int verb) {
   int current = 0;
-  int size = program.size();
+  auto size = program.size();
 
   program[1] = noun;
   program[2] = verb;
@@ -69,7 +69,8 @@ int main(int argc, char *argv[]) {
             << "Value left at position 0: " << res << std::endl;
 
   // STEP 2
-  int noun = 0, verb = 0;
+  int noun = 0;
+  int verb = 0;
   // lets bruteforce that...
   while (runProg(program, noun, verb) != 19690720) {
     noun++;

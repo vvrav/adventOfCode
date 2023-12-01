@@ -32,11 +32,12 @@ std::vector<std::string> getInput(int argc, char *argv[]) {
   return input;
 }
 
-std::vector<std::string> splitString(const std::string &s, const char sep) {
+std::vector<std::string> splitString(const std::string &inputString,
+                                     const char sep) {
   std::vector<std::string> result;
-  std::stringstream ss(s);
+  std::stringstream stream(inputString);
   std::string item;
-  while (getline(ss, item, sep)) {
+  while (getline(stream, item, sep)) {
     result.push_back(item);
   }
   return result;

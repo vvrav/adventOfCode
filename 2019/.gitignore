@@ -1,1 +1,3 @@
 day*.out
+*.idx
+compile_commands.json
