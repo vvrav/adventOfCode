@@ -1,0 +1,13 @@
+[package]
+name = "day04"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "scratchcards"           # The name of the target.
+path = "scratchcards.rs"    # The source file of the target.
+
+[dependencies]
+regex = "1.10.2"
