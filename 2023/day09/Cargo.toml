@@ -1,0 +1,10 @@
+[package]
+name = "day09"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "mirage"           # The name of the target.
+path = "mirage.rs"    # The source file of the target.
